@@ -1,0 +1,107 @@
+{
+  "name": "Book",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Book title"
+    },
+    "author": {
+      "type": "string",
+      "description": "Author name"
+    },
+    "year": {
+      "type": "number",
+      "description": "Publication year"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Anatomy",
+        "Physiology",
+        "Biochemistry",
+        "Histology",
+        "Embryology",
+        "Microbiology",
+        "Pathology",
+        "Pharmacology",
+        "Surgery",
+        "Internal Medicine",
+        "Cardiology",
+        "Neurology",
+        "Dermatology",
+        "Psychiatry",
+        "Ophthalmology",
+        "ENT",
+        "Orthopedics",
+        "Radiology",
+        "Pediatrics",
+        "Gynecology & Obstetrics",
+        "Emergency Medicine",
+        "Critical Care",
+        "Family Medicine",
+        "General Practice",
+        "Oncology",
+        "Hematology",
+        "Immunology",
+        "Nephrology",
+        "Gastroenterology",
+        "Endocrinology",
+        "Infectious Diseases",
+        "Urology",
+        "Anesthesiology",
+        "Public Health",
+        "Epidemiology"
+      ],
+      "description": "Medical specialty category"
+    },
+    "publisher": {
+      "type": "string",
+      "description": "Publishing company"
+    },
+    "description": {
+      "type": "string",
+      "description": "Book description"
+    },
+    "cover_image": {
+      "type": "string",
+      "description": "Cover image URL"
+    },
+    "pdf_url": {
+      "type": "string",
+      "description": "PDF download URL"
+    },
+    "read_online_url": {
+      "type": "string",
+      "description": "URL to read online"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the book is featured"
+    }
+  },
+  "required": [
+    "title",
+    "author",
+    "category"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
